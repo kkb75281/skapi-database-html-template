@@ -91,38 +91,37 @@
                 });
             }
         </script>
+        <style>
+            /*
+                Following class will make the element clickable.
+            */
+            .clickable {
+                cursor: pointer;
+                color: blue;
+            }
+            
+            .clickable:active {
+                color: purple;
+            }
 
+            /*
+                Following will style the image element.
+                When the user clicks on the image preview, it will open the file input.
+                If the user does not select a file, it will show "Choose Image" text.
+            */
+            img {
+                width: 100%;
+            }
+
+            #img_preview[src=""]::before {
+                content: '[Click to Select Photo]';
+                font-weight: bold;
+            }
+        </style>
         <form onsubmit="postPhoto(this, event)">
                 <h1>Post Photo</h1>
                 <label for='input_fileInput' class="clickable">
                     <img id='img_preview' src="">
-                    <style>
-                        /*
-                            Following class will make the element clickable.
-                        */
-                        .clickable {
-                            cursor: pointer;
-                            color: blue;
-                        }
-                        
-                        .clickable:active {
-                            color: purple;
-                        }
-
-                        /*
-                            Following will style the image element.
-                            When the user clicks on the image preview, it will open the file input.
-                            If the user does not select a file, it will show "Choose Image" text.
-                        */
-                        img {
-                            width: 100%;
-                        }
-
-                        #img_preview[src=""]::before {
-                            content: '[Click to Select Photo]';
-                            font-weight: bold;
-                        }
-                    </style>
                 </label>
 
                 <br><br>
@@ -251,10 +250,11 @@
             box-sizing: border-box;
         }
 
-        article .like[data-like='❤️'] {
-            color: red;
-        }
-
+        /*
+            Following css will style the LIKE button.
+            data-like attribute will show the like status of the post.
+            When the user clicks the LIKE button, it will change the data-like attribute to '❤️' or '🩶'.
+        */
         article .like::before {
             content: attr(data-like);
         }
