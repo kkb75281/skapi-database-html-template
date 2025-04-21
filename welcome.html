@@ -599,7 +599,7 @@
         Following function addComment() will add a comment to the post.
         When the user submits the form, it will call the addComment() function.
         We are using the skapi.postRecord() method to upload the comment.
-        The comments are uploaded using compond index names. (ex: comment.1234)
+        The comments are uploaded using compond index names using the record ID. (ex: comment.record_id)
         This way we can get the comments of a post and also fetch the posts ordered by most commented.
     */
     async function addComment(event, record_id) {
@@ -616,6 +616,12 @@
                 value: true
             }
         }).finally(() => disableForm(event.target, false));
+
+        // Following code will update the comment count of the post.
+        let commentCounter = document.getElementById(`span_commentCount-${record_id}`);
+        if (commentCounter) {
+            commentCounter.textContent = Number(commentCounter.textContent) + 1;
+        }
 
         event.target.reset();
 
