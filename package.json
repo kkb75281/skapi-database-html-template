@@ -1,0 +1,14 @@
+{
+  "name": "skapi-database-html-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx bns 3300"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "basic-node-server": "^1.0.13"
+  }
+}

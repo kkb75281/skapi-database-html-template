@@ -1,0 +1,44 @@
+<!--
+    index.html is the first page your user will see when they visit your website.
+-->
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!--
+    Following <script> tag will import skapi.js.
+-->
+<script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+
+<!--
+    Import the service.js code that contains your initialization of Skapi class.
+-->
+<script src="service.js"></script>
+
+<script>
+    /*
+        Check if the user is logged in.
+        If the user is logged in, redirect the user to welcome page.
+    */
+    skapi.getProfile().then(user => {
+        if (user) {
+            location.href = 'welcome.html';
+        }
+    });
+</script>
+
+<main>
+    <h1>Index</h1>
+    <p>
+        This is a HTML example for building photo uploading application using <a href='https://www.skapi.com'>Skapi</a>.
+        <br>
+        No fancy CSS is used in this example.
+        <br>
+        <br>
+        This example features complex database examples such as uploading an image file, posting private data, comments, like button, searching photo by hashtag etc - all within a single HTML file.
+        <br><br>
+        Users can upload their own photos and view other users' photos after logging in. Authentication part is simplified to just two pages - login.html and signup.html.
+    </p>
+    <a href="login.html">Login</a>
+    |
+    <a href="signup.html">Sign-Up</a>
+</main>
