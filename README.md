@@ -12,6 +12,10 @@ This example features complex database examples such as:
 - Seach post via hashtag
 - Fetching more data (Pagination)
 
+...All in a single HTML file - **welcome.html**
+
+Users must login to post and fetch uploaded photos.
+
 ## How To Run
 
 Download the project, unzip, and open the `index.html`.
