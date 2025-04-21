@@ -16,6 +16,15 @@ This example features complex database examples such as:
 
 Users must login to post and fetch uploaded photos.
 
+## Recommeded VSCode Extention
+
+For HTML projects we often tend to use element.innerHTML.
+
+So we recommend installing innerHTML string highlighting extention like one below:
+
+[es6-string-html](https://marketplace.visualstudio.com/items/?itemName=Tobermory.es6-string-html)
+
+
 ## How To Run
 
 Download the project, unzip, and open the `index.html`.
