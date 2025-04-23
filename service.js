@@ -37,20 +37,3 @@ let options = {
 }
 
 const skapi = new Skapi(SERVICE_ID, OWNER_ID, options);
-
-/*
-    The following function disableForm() is for disabling the form while the user is submitting.
-    It can be useful if you want to prevent the user from editing the form while it's uploading.
-    You will see this function being used in the form submission thoughout the project.
-*/
-function disableForm(form, disabled) {
-    form.querySelectorAll('input').forEach(input => {
-        input.disabled = disabled;
-    });
-    form.querySelectorAll('textarea').forEach(textarea => {
-        textarea.disabled = disabled;
-    });
-    form.querySelectorAll('a').forEach(a => {
-        return disabled ? a.setAttribute('disabled', '') : a.removeAttribute('disabled');
-    });
-}
