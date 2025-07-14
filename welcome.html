@@ -320,7 +320,7 @@
         Following variable subscription_list will be used to store the subscription status of the user.
     */
     let subscription_list = {
-        // user_id: true/false // true if the user is subscribed, false if not
+        // user_id: subscription object // if the user is not subscribed value is false
     }
 
     /*
@@ -464,7 +464,12 @@
         let html = /*html*/`
 
             <span style='font-weight:bold'>${uploader.name}</span>
-
+            
+            <!--
+                Following <strong> tag will allow the user to subscribe to the uploader.
+                When the user clicks the <strong> element, it will call the subscribe() function.
+                We will declare the subscribe() function later.    
+            -->
             <strong
                 class='clickable subscribe strong_subs-${p.user_id}'
                 onclick='subscribe(this, "${p.user_id}")'
@@ -788,6 +793,13 @@
         document.getElementById(`span_likedCount-${record_id}`).textContent = likedCount.toString();
     }
 
+    /*
+        Following function subscribe() will allow the user to subscribe to the uploader.
+        When the user clicks the <strong> element, it will call the subscribe() function.
+        We are using the skapi.subscribe() method to subscribe the user.
+        If the user is already subscribed, it will unsubscribe the user.
+        The subscription status will be stored in the subscription_list variable that we have declared above.
+    */
     async function subscribe(el, user_id) {
         let data_subscribe = el.getAttribute('data-subscribe');
         if (!data_subscribe) {
@@ -803,6 +815,7 @@
             });
 
             let className = `strong_subs-${user_id}`;
+            // If the user is not subscribed, we will set the data-subscribe attribute to 'Subscribed'.
             Array.from(document.querySelectorAll(`.${className}`)).forEach(el => {
                 el.setAttribute('data-subscribe', 'Subscribed');
             });
@@ -813,6 +826,7 @@
             });
 
             subscription_list[user_id] = false;
+            // If the user is already subscribed, we will set the data-subscribe attribute to 'Subscribe'.
             Array.from(document.querySelectorAll(`.strong_subs-${user_id}`)).forEach(el => {
                 el.setAttribute('data-subscribe', 'Subscribe');
             });
@@ -894,6 +908,11 @@
                 break;
 
             case 'feed':
+                /*
+                    For feed, we will use the getFeed() function.
+                    We will declare the getFeed() function below.
+                    Argument of getFeed() is set to false so that we can fetch the feed from the start.
+                */
                 getFeed(false);
                 break;
 
