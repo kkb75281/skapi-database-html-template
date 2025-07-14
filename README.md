@@ -11,6 +11,7 @@ This example features complex database examples such as:
 - List post in order of most liked, most recent
 - Seach post via hashtag
 - Fetching more data (Pagination)
+- Subscribing to users and fetching subscription feeds
 
 ...All in a single HTML file - **welcome.html**
 
