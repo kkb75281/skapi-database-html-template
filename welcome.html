@@ -7,10 +7,11 @@
 <link rel="stylesheet" href="main.css" />
 
 <main>
-    <h1>Login Success</h1>
-    <p id="WelcomeMessage"></p>
-    <pre style='max-width: 100%; overflow-x: auto;' id="UserInfo"></pre>
-    <button onclick="skapi.logout().then(()=>location.href = 'index.html')">Logout</button>
+    <div class="flex-wrap">
+        <h1 id="WelcomeMessage"></h1>
+        <button onclick="skapi.logout().then(()=>location.href = 'index.html')" style="width: unset">Logout</button>
+    </div>
+    <!-- <pre style='max-width: 100%; overflow-x: auto;' id="UserInfo"></pre> -->
 
     <script>
         /* 
@@ -51,7 +52,6 @@
     </script>
 
     <br>
-    <br>
 
     <!--
         Following <section> will allow the user to upload a post.
@@ -60,7 +60,7 @@
         When successful, it will prepend the post to the top of the page.
         When unsuccessful, it will show an alert with the error message.
     -->
-    <section style="padding: 20px 0;">
+    <section>
         <script>
             function postPhoto(form, event) {
                 disableForm(form, true);
@@ -210,9 +210,9 @@
         When the user clicks the "My Private" link, it will show the posts that the user has uploaded and set to private.
         We will use the hash(#) in the url to identify how the posts should be fetched.
     -->
-    <br><br>
+    <br><br><br>
 
-    <nav style="text-align: center;">
+    <nav style="text-align: center; max-width: 400px; margin: 0 auto;">
         <a href="welcome.html">Most Recent</a>
         |
         <a href="#mostliked">Most Liked</a>
@@ -238,7 +238,7 @@
 
     <br>
 
-    <div style='text-align: center'>
+    <section style='text-align: center'>
         <!--
             Following <button> will allow the user to fetch more posts.
             If there are more posts to fetch, it will enable the button.
@@ -246,7 +246,8 @@
             We will declare the getPosts() function and onclick event later.
         -->
         <button id="fetchMoreButton" disabled>Fetch More Posts</button>
-    </div>
+    </section>
+
     <br>
     <br>
     <br>
@@ -863,8 +864,3 @@
     initialFetch();
     window.addEventListener('hashchange', initialFetch);
 </script>
-<style>
-    section {
-        max-width: 600px;
-    }
-</style>
