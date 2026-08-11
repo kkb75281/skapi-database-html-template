@@ -4,14 +4,14 @@ This is a HTML example for building photo uploading application using Skapi's da
 
 This example features complex database examples such as:
 
--   Posting an image file and description
--   Post as a private data
--   Posting comments
--   Like button
--   List post in order of most liked, most recent
--   Seach post via hashtag
--   Fetching more data (Pagination)
--   Subscribing to users and fetching subscription feeds
+- Posting an image file and description
+- Post as a private data
+- Posting comments
+- Like button
+- List post in order of most liked, most recent
+- Seach post via hashtag
+- Fetching more data (Pagination)
+- Subscribing to users and fetching subscription feeds
 
 ...All in a single HTML file - **welcome.html**
 
@@ -51,6 +51,6 @@ You can check our live demo [Here](https://skapi-database-html-template.skapi.co
 
 ## Important!
 
-Replace the `SERVICE_ID` and `OWNER_ID` value to your own service in `service.js`
+Replace the `PROJECT_ID` and `OWNER_ID` value to your own project in `project.js`
 
-You can get your own service ID from [Skapi](https://www.skapi.com)
+You can get your own project ID from [Skapi](https://www.skapi.com)
