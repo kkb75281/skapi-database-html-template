@@ -51,6 +51,6 @@ You can check our live demo [Here](https://skapi-database-html-template.skapi.co
 
 ## Important!
 
-Replace the `PROJECT_ID` and `OWNER_ID` value to your own project in `project.js`
+Replace the `PROJECT_ID` value to your own project in `project.js`
 
 You can get your own project ID from [Skapi](https://www.skapi.com)

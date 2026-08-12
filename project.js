@@ -5,8 +5,8 @@
 
 /*
     Below, is the initializing code for Skapi.
-    Replace "project_id" and "owner_id" with your actual Project ID and Owner ID.
-    You can retrieve the project ID and the owner ID from www.skapi.com.
+    Replace "project_id" with your actual Project ID.
+    You can retrieve the project ID from www.skapi.com.
     For more information, checkout the Getting Started: https://docs.skapi.com/introduction/getting-started.html
 */
 
